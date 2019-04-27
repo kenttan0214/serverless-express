@@ -16,4 +16,5 @@ jobs:
       script: sls deploy
 stages:
   - setup
-  - deploy
+  - name: deploy
+    if: branch = master  
