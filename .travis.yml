@@ -17,4 +17,3 @@ jobs:
 stages:
   - setup
   - deploy
-    if: branch = master      
