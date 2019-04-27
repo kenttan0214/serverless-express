@@ -13,7 +13,7 @@ Clone the repository to your local and install the necessary packages from yarn
  yarn install
 ```
 
-### How to launch the API  application
+### How to launch the API  application test
 
 __Run command below to start serverless offline__
 ```
