@@ -4,17 +4,17 @@ node_js:
 cache:
   directories:
     - node_modules
-jobs:  
+jobs:
   include:
     - stage: "setup"
       name: "pre-Setup"
       script: npm install -g serverless yarn
-      name: "run yarn install"
-    - script: yarn install
+    - name: "run yarn install"
+      script: yarn install
     - stage: deploy
       name: "Deploy to AWS Lambda"
       script: sls deploy
 stages:
   - setup
   - name: deploy
-    if: branch = master  
+    if: branch = master
