@@ -7,11 +7,11 @@ cache:
 jobs:
   include:
     - stage: "setup"
-      name: "pre-Setup"
+      name: "Pre-Setup"
       script: npm install -g serverless yarn
-    - name: "run yarn install"
+    - name: "Install Dependency"
       script: yarn install
-    - stage: deploy
+    - stage: "deploy"
       name: "Deploy to AWS Lambda"
       script: sls deploy
 stages:
