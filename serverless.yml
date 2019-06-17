@@ -12,12 +12,6 @@ provider:
   stage: dev
   region: ap-southeast-1
 functions:
-  swagger:
-    handler: src/swagger.handler
-    events:
-      - http:
-          path: swagger
-          method: get
   health:
     handler: src/server.handler
     events:

@@ -5,7 +5,7 @@
   "main": "webpack.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "local": "sls offline start --skipCacheInvalidation",
+    "local": "sls offline start",
     "lint-js": "eslint ./src --ext .js",
     "lint-js-fix": "eslint ./src --ext .js --fix",
     "format": "prettier --single-quote --write src/**/*.js",
