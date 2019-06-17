@@ -21,3 +21,5 @@ stages:
     if: branch = master
   - name: deploy
     if: branch = master
+notifications:
+  slack: amway-5hs5654:WbTqYUgqcHFRvkpo4JnvtUbb
