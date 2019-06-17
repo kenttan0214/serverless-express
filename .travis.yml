@@ -6,11 +6,14 @@ cache:
     - node_modules
 jobs:
   include:
-    - stage: "setup"
-      name: "Install Dependency"
+    - stage: setup
+      name: 'Install Dependency'
       script: yarn install
-    - stage: "deploy"
-      name: "Deploy to AWS Lambda"
+    - stage: test
+      name: 'Eslint'
+      script: yarn lint-js
+    - stage: deploy
+      name: 'Deploy to AWS Lambda'
       script: sls deploy
 stages:
   - setup
