@@ -4,6 +4,9 @@ node_js:
 cache:
   directories:
     - node_modules
+branches:
+  only:
+  - develop
 jobs:
   include:
     - stage: setup
@@ -15,9 +18,5 @@ jobs:
     - stage: deploy
       name: 'Deploy to AWS Lambda'
       script: sls deploy
-stages:
-  - setup
-  - name: test
-    if: branch = master
 notifications:
   slack: amway-5hs5654:WbTqYUgqcHFRvkpo4JnvtUbb
