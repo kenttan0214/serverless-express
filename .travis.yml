@@ -15,11 +15,6 @@ jobs:
     - stage: deploy
       name: 'Deploy to AWS Lambda'
       script: sls deploy
-stages:
-  - setup
-  - name: test
-    if: branch = master
-  - name: deploy
-    if: branch = master
+
 notifications:
   slack: amway-5hs5654:WbTqYUgqcHFRvkpo4JnvtUbb
