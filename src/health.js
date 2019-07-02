@@ -1,5 +1,6 @@
 const health = (req, res) => {
-  res.status(200).json({ status: 'up and running' });
+  const foo = process.env.FOO;
+  res.status(200).json({ status: 'up and running', foo });
 };
 
 export default health;

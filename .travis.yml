@@ -4,11 +4,12 @@ node_js:
 cache:
   directories:
     - node_modules
-branches:
-  only:
-  - develop
 jobs:
   include:
+    - if: branch = master
+      env: FOO=foo1
+    - if: branch = develop
+      env: FOO=foo2
     - stage: setup
       name: 'Install Dependency'
       script: yarn install
