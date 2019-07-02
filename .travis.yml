@@ -11,11 +11,13 @@ jobs:
       env:
         - FOO=foo1
         - BOO=boo1
+      script: echo "done"
     - stage: set develop environment parameters
       if: branch = develop
       env:
         - FOO=foo2
         - BOO=boo2
+      script: echo "done"
     - stage: setup
       name: 'Install Dependency'
       script: yarn install
