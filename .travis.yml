@@ -12,17 +12,17 @@ jobs:
     - stage: test
       name: 'Eslint'
       script: yarn lint-js
-    - stage: deploy prod
-      if: branch = master
-      env:
-        - FOO=foo1
-        - BOO=boo1
-      script: sls deploy
     - stage: deploy dev
       if: branch = develop
       env:
         - FOO=foo2
         - BOO=boo2
+      script: sls deploy
+    - stage: deploy prod
+      if: branch = master
+      env:
+        - FOO=foo1
+        - BOO=boo1
       script: sls deploy
 notifications:
   slack: amway-5hs5654:WbTqYUgqcHFRvkpo4JnvtUbb
