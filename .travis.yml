@@ -6,21 +6,21 @@ cache:
     - node_modules
 jobs:
   include:
-    - stage: set prod environment parameters
+    - stage: setup
+      name: 'Install Dependency'
+      script: yarn install
+      name: set prod environment parameters
       if: branch = master
       env:
         - FOO=foo1
         - BOO=boo1
       script: echo "done"
-    - stage: set develop environment parameters
+      name: set develop environment parameters
       if: branch = develop
       env:
         - FOO=foo2
         - BOO=boo2
       script: echo "done"
-    - stage: setup
-      name: 'Install Dependency'
-      script: yarn install
     - stage: test
       name: 'Eslint'
       script: yarn lint-js
