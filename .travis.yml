@@ -8,10 +8,14 @@ jobs:
   include:
     - stage: set prod environment parameters
       if: branch = master
-      env: FOO=foo1
+      env:
+        - FOO=foo1
+        - BOO=boo1
     - stage: set develop environment parameters
       if: branch = develop
-      env: FOO=foo2
+      env:
+        - FOO=foo2
+        - BOO=boo2
     - stage: setup
       name: 'Install Dependency'
       script: yarn install
