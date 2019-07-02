@@ -9,27 +9,20 @@ jobs:
     - stage: setup
       name: 'Install Dependency'
       script: yarn install
-    - name: Set prod environment parameters
+    - stage: test
+      name: 'Eslint'
+      script: yarn lint-js
+    - stage: deploy prod
       if: branch = master
       env:
         - FOO=foo1
         - BOO=boo1
-      script: echo "done"
-      git:
-        clone: false
-    - name: Set develop environment parameters
+      script: sls deploy
+    - stage: deploy dev
       if: branch = develop
       env:
         - FOO=foo2
         - BOO=boo2
-      script: echo "done"
-      git:
-        clone: false
-    - stage: test
-      name: 'Eslint'
-      script: yarn lint-js
-    - stage: deploy
-      name: 'Deploy to AWS Lambda'
       script: sls deploy
 notifications:
   slack: amway-5hs5654:WbTqYUgqcHFRvkpo4JnvtUbb
